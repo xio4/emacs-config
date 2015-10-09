@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: step
+# key: makestep
+# --
+F(function() {
+$0
+});

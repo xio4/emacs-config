@@ -1,0 +1,8 @@
+(:name tern-auto-complete 
+	:website "ternjs.net"
+	:description "javascipt checker"
+	:depends tern
+	:type github
+	:pkgname "marijnh/tern"
+	:load "emacs/tern-auto-complete.el"
+	)
