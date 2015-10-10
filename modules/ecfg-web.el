@@ -40,6 +40,7 @@
       (progn
         (yas-minor-mode)
         (flycheck-mode)
+        (tern-mode t)
         )
     )
 

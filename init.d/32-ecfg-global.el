@@ -16,6 +16,7 @@
   (ecfg--setup-perspective)
   (ecfg--setup-shell)
   (ecfg--setup-flycheck)
+  (ecfg--setup-tern)
 
   ;; getting rid of annoying auto-opened buffers
   (if (get-buffer ".emacs.elc") (kill-buffer ".emacs.elc"))
@@ -285,7 +286,7 @@
   (ecfg-install flycheck
                 (require 'flycheck)
 
-                (add-hook 'after-init-hook #'global-flycheck-mode)
+                ;; (add-hook 'after-init-hook #'global-flycheck-mode)
 
                 (setq-default flycheck-disabled-checkers
                               (append flycheck-disabled-checkers
@@ -295,3 +296,17 @@
                               (append flycheck-disabled-checkers
                                       '(json-jsonlist)))
   ))
+
+(defun ecfg--setup-tern ()
+  (ecfg-install auto-complete
+    (ecfg-install tern
+        (ecfg-install tern-auto-complete
+            (eval-after-load 'tern
+              '(progn
+                 (require 'tern-auto-complete)
+                 (tern-ac-setup)
+                 (defun delete-tern-process ()
+                   (interactive)
+                   (delete-process "Tern"))
+                 )))))
+  )

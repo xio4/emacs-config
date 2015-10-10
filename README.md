@@ -1,7 +1,7 @@
-See https://github.com/maslennikov/emacs-config
+### See https://github.com/maslennikov/emacs-config
 
 ## Install eslint
-### npm install -g eslint babel-eslint eslint-plugin-react
+npm install -g eslint babel-eslint eslint-plugin-react
 
 ## ~/.eslintrc example
 ```json
