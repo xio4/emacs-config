@@ -14,6 +14,8 @@
   (ecfg--setup-undo)
   (ecfg--setup-evil)
   (ecfg--setup-perspective)
+  (ecfg--setup-shell)
+  (ecfg--setup-flycheck)
 
   ;; getting rid of annoying auto-opened buffers
   (if (get-buffer ".emacs.elc") (kill-buffer ".emacs.elc"))
@@ -272,3 +274,24 @@
       (require 'perspective)
       (persp-mode))
 )
+
+(defun ecfg--setup-shell ()
+  (ecfg-install exec-path-from-shell
+                (when (memq window-system '(mac ns))
+                  (exec-path-from-shell-initialize)))
+)
+
+(defun ecfg--setup-flycheck ()
+  (ecfg-install flycheck
+                (require 'flycheck)
+
+                (add-hook 'after-init-hook #'global-flycheck-mode)
+
+                (setq-default flycheck-disabled-checkers
+                              (append flycheck-disabled-checkers
+                                      '(javascript-jshint)))
+
+                (setq-default flycheck-disabled-checkers
+                              (append flycheck-disabled-checkers
+                                      '(json-jsonlist)))
+  ))

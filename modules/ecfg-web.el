@@ -21,6 +21,8 @@
     (add-hook 'sgml-mode-hook 'emmet-mode)
     (add-hook 'web-mode-hook 'emmet-mode))
 
+   (flycheck-add-mode 'javascript-eslint 'web-mode)
+
    (add-hook 'web-mode-hook 'ecfg--web-mode-hook))
   )
 ;;;###autoload (ecfg-auto-module "\\.jsx\\'" web)
@@ -35,7 +37,11 @@
 
 (defun ecfg--web-mode-hook ()
   (if (equal web-mode-content-type "jsx")
-      (yas-minor-mode))
+      (progn
+        (yas-minor-mode)
+        (flycheck-mode)
+        )
+    )
 
   (setq web-mode-markup-indent-offset 2)
   (setq web-mode-css-indent-offset 2)
