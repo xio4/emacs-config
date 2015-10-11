@@ -17,6 +17,7 @@
   (ecfg--setup-shell)
   (ecfg--setup-flycheck)
   (ecfg--setup-tern)
+  (ecfg--setup-ecb)
 
   ;; getting rid of annoying auto-opened buffers
   (if (get-buffer ".emacs.elc") (kill-buffer ".emacs.elc"))
@@ -310,3 +311,12 @@
                    (delete-process "Tern"))
                  )))))
   )
+
+(defun ecfg--setup-ecb ()
+  (ecfg-install ecb
+                (require 'ecb)
+                (require 'ecb-autoloads)
+                (setq ecb-show-sources-in-directories-buffer 'always)
+                (setq ecb-compile-window-height 12)
+
+                ))

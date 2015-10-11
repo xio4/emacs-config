@@ -130,4 +130,22 @@
          (interactive)
          (if server-buffer-clients (server-edit) (ido-kill-buffer))))))
 
+
+  (global-set-key (kbd "C-x w h") 'windmove-left)
+  (global-set-key (kbd "C-x w l") 'windmove-right)
+  (global-set-key (kbd "C-x w k") 'windmove-up)
+  (global-set-key (kbd "C-x w j") 'windmove-down)
+  (global-set-key (kbd "C-x w t") 'transpose-buffers)
+
+;;; activate and deactivate ecb
+  (global-set-key (kbd "C-x C-;") 'ecb-activate)
+;;; quick navigation between ecb windows
+  (global-set-key (kbd "C-)") 'ecb-goto-window-edit1)
+  (global-set-key (kbd "C-!") 'ecb-goto-window-directories)
+  (global-set-key (kbd "C-@") 'ecb-goto-window-sources)
+  (global-set-key (kbd "C-#") 'ecb-goto-window-methods)
+  (global-set-key (kbd "C-$") 'ecb-goto-window-compilation)
+  (global-set-key (kbd "C-x C-'") 'tmtxt/ecb-deactivate)
+  (global-set-key (kbd "C-;") 'tmtxt/ecb-show-ecb-windows)
+  (global-set-key (kbd "C-'") 'tmtxt/ecb-hide-ecb-windows)
 )

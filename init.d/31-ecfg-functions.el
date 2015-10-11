@@ -229,3 +229,38 @@ keyword symbol or a cons of keyword symbol and argument's default value."
               (error "Unexpected keyword argument %s" (car keys-temp)))
              (setq keys-temp (cdr (cdr keys-temp)))))))
     ,@body))
+
+(defun transpose-buffers (arg)
+  "Transpose the buffers shown in two windows."
+  (interactive "p")
+  (let ((selector (if (>= arg 0) 'next-window 'previous-window)))
+    (while (/= arg 0)
+      (let ((this-win (window-buffer))
+            (next-win (window-buffer (funcall selector))))
+        (set-window-buffer (selected-window) next-win)
+        (set-window-buffer (funcall selector) this-win)
+        (select-window (funcall selector)))
+      (setq arg (if (plusp arg) (1- arg) (1+ arg))))))
+
+;;; replacement for built-in ecb-deactive, ecb-hide-ecb-windows and
+;;; ecb-show-ecb-windows functions
+;;; since they hide/deactive ecb but not restore the old windows for me
+(defun tmtxt/ecb-deactivate ()
+  "deactive ecb and then split emacs into 2 windows that contain 2 most recent buffers"
+  (interactive)
+  (ecb-deactivate)
+  (split-window-right)
+  (switch-to-next-buffer)
+  (other-window 1))
+(defun tmtxt/ecb-hide-ecb-windows ()
+  "hide ecb and then split emacs into 2 windows that contain 2 most recent buffers"
+  (interactive)
+  (ecb-hide-ecb-windows)
+  (split-window-right)
+  (switch-to-next-buffer)
+  (other-window 1))
+(defun tmtxt/ecb-show-ecb-windows ()
+  "show ecb windows and then delete all other windows except the current one"
+  (interactive)
+  (ecb-show-ecb-windows)
+  (delete-other-windows))
