@@ -34,4 +34,6 @@
 (defun ecfg--setup-color-theme ()
   (add-to-list 'custom-theme-load-path (expand-file-name "themes" ecfg-dir))
   (setq x-underline-at-descent-line t)
-  (load-theme 'tsdh-dark t))
+  (load-theme 'ecfg-dark t)
+  ;; (load-theme 'tsdh-dark t))
+  )
