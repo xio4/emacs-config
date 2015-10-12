@@ -53,6 +53,7 @@ npm install -g eslint babel-eslint eslint-plugin-react
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
+ '(column-number-mode t)
  '(custom-enabled-themes (quote (tsdh-dark)))
  '(ecb-layout-name "left14")
  '(ecb-layout-window-sizes
@@ -68,13 +69,15 @@ npm install -g eslint babel-eslint eslint-plugin-react
  '(ecb-options-version "2.40")
  '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
  '(ecb-source-path (quote (".")))
- '(ecb-tip-of-the-day nil))
+ '(ecb-tip-of-the-day nil)
+ '(show-paren-mode t)
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
-
+ ;; Compile emacs with support xft
+ '(default ((t (:family "Liberation Mono" :foundry "unknown" :slant normal :weight normal :height 110 :width normal)))))
 (load-file "~/.emacs.config/init.el")
 ```

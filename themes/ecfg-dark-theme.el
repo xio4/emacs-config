@@ -175,7 +175,7 @@ providing a clue if it IS-DARK theme."
        (font-lock-function-name-face (:foreground ,fg-base))
        (font-lock-keyword-face (:foreground ,blue))
        (font-lock-builtin-face (:foreground ,blue))
-       (font-lock-type-face (:foreground ,violet))
+       (font-lock-type-face (:foreground ,orange))
        (font-lock-variable-name-face (:foreground ,fg-base))
        ;; (font-lock-preprocessor-face (:foreground ,blue))
        (font-lock-warning-face (:foreground ,red :weight normal))
@@ -399,7 +399,7 @@ providing a clue if it IS-DARK theme."
    ;; background highlight
    (bg-hc .   "#384248")
    ;; background light
-   (bg-base . "#283238")
+   (bg-base . "#2b2b2b")
 
    ;; Solarized accented colors
    (yellow  . "#b58900")

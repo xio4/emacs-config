@@ -15,7 +15,8 @@
   (setq-default inhibit-startup-screen t)
   (show-paren-mode t)
   (global-hl-line-mode t)
-  (column-number-mode t))
+  (global-linum-mode t))
+  ;; (column-number-mode t))
 
 (defun ecfg--setup-sml-modeline ()
   (ecfg-install sml-modeline
