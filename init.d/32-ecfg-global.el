@@ -18,6 +18,7 @@
   (ecfg--setup-flycheck)
   (ecfg--setup-tern)
   (ecfg--setup-ecb)
+  (ecfg--setup-jscs)
 
   ;; getting rid of annoying auto-opened buffers
   (if (get-buffer ".emacs.elc") (kill-buffer ".emacs.elc"))
@@ -296,7 +297,8 @@
                 (setq-default flycheck-disabled-checkers
                               (append flycheck-disabled-checkers
                                       '(json-jsonlist)))
-  ))
+  )
+)
 
 (defun ecfg--setup-tern ()
   (ecfg-install auto-complete
@@ -320,3 +322,7 @@
                 (setq ecb-compile-window-height 12)
 
                 ))
+
+(defun ecfg--setup-jscs ()
+    (require 'jscs)
+)
