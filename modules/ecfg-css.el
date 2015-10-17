@@ -16,6 +16,12 @@
    (add-to-list 'auto-mode-alist '("\\.scss$" . scss-mode))
    (add-hook 'scss-mode-hook 'ecfg--scss-hook))
 
+   ;; supporting less syntax
+  (ecfg-install less-css-mode
+   (autoload 'less-css-mode "less-css-mode" nil t)
+   (add-to-list 'auto-mode-alist '("\\.less$" . less-css-mode))
+   (add-hook 'less-css-mode-hook 'ecfg--less-hook))
+
   ;; utilizing helm in navigating through stylesheet properties
   (ecfg--setup-helm-css-scss)
   )
@@ -29,6 +35,8 @@
   ;; the css-mode-hook will be already executed by this moment
   (setq scss-compile-at-save nil))
 
+(defun ecfg--less-hook ()
+  (setq css-indent-offset 2))
 
 (defun ecfg--setup-helm-css-scss ()
   (ecfg-install helm-css-scss

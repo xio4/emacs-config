@@ -102,7 +102,9 @@ auto-mode-alist to trigger the autoload of the module."
 
   (if (file-exists-p generated-autoload-file)
       ;; already been there, just load loaddefs
-      (load-file generated-autoload-file)
+      ;; FIX error loading generated files
+     ;; (load-file generated-autoload-file)
+      (ecfg-run-init-scripts (directory-files ecfg-module-dir t))
     ;; making the first run, churn up all modules to trigger el-get installs
     (ecfg-run-init-scripts (directory-files ecfg-module-dir t))
     (update-directory-autoloads ecfg-module-dir)))
