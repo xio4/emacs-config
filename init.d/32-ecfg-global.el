@@ -330,7 +330,25 @@
                 (setq ecb-show-sources-in-directories-buffer 'always)
                 (setq ecb-compile-window-height 12)
 
-                ))
+                (customize-set-variable 'ecb-layout-name "left14")
+                (customize-set-variable 'ecb-options-version "2.40")
+                (customize-set-variable 'ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
+                (customize-set-variable 'ecb-source-path (quote (".")))
+                (customize-set-variable 'ecb-tip-of-the-day nil)
+
+                (customize-set-variable 'ecb-layout-window-sizes
+                    (quote
+                        (("left14"
+                        (ecb-directories-buffer-name 0.3235294117647059 . 0.7142857142857143)
+                        (ecb-history-buffer-name 0.3235294117647059 . 0.2619047619047619))
+                        ("left8"
+                        (ecb-directories-buffer-name 0.32116788321167883 . 0.5111111111111111)
+                        (ecb-sources-buffer-name 0.32116788321167883 . 0.2222222222222222)
+                        (ecb-methods-buffer-name 0.32116788321167883 . 0.1111111111111111)
+                        (ecb-history-buffer-name 0.32116788321167883 . 0.13333333333333333)))))
+
+  )
+)
 
 (defun ecfg--setup-jscs ()
     (require 'jscs)

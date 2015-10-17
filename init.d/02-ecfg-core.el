@@ -10,7 +10,7 @@
   ;; we don't need menubar (execpt OSX), toolbar nor scrollbar
   (and (fboundp 'menu-bar-mode)
        (not (eq system-type 'darwin))
-       (tool-bar-mode -1))
+       (tool-bar-mode nil))
   (dolist (mode '(tool-bar-mode scroll-bar-mode))
     (when (fboundp mode) (funcall mode -1)))
 

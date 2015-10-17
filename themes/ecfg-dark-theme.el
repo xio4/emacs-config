@@ -87,7 +87,7 @@ providing a clue if it IS-DARK theme."
          (cursor (ecfg--lc fg-lc 0.8))
          (modeline-bg (ecfg--lc cursor))
 
-         (sel-primary-bg (ecfg--palette-color 'selection (ecfg--hc bg-hc 0.9)))
+         (sel-primary-bg (ecfg--palette-color 'selection (ecfg--hc bg-hc 0.4)))
          (sel-secondary-bg (ecfg--lc cyan))
          (match-hc-bg orange)
          (match-lc-bg (ecfg--lc orange))
@@ -189,7 +189,7 @@ providing a clue if it IS-DARK theme."
        (completions-annotations (:foreground ,fg-lc))
 
        (ac-candidate-face (:background ,bg-hc :foreground ,cyan))
-       (ac-selection-face (:background ,(ecfg--lc cyan) :foreground ,(ecfg--hc cyan)))
+       (ac-selection-face (:background ,(ecfg--lc cyan 0.5) :foreground ,(ecfg--hc cyan)))
        (ac-candidate-mouse-face (:background ,(ecfg--hc cyan) :foreground ,(ecfg--lc cyan)))
        (ac-completion-face (:foreground ,fg-hc :underline t))
        (ac-gtags-candidate-face (:background ,bg-hc :foreground ,blue))
