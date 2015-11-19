@@ -36,7 +36,7 @@
   (setq scss-compile-at-save nil))
 
 (defun ecfg--less-hook ()
-  (setq css-indent-offset 2))
+  (setq css-indent-offset 4))
 
 (defun ecfg--setup-helm-css-scss ()
   (ecfg-install helm-css-scss
