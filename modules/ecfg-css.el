@@ -29,7 +29,8 @@
 
 
 (defun ecfg--css-hook ()
-  (setq css-indent-offset 2))
+  (setq css-indent-offset 2)
+  (rainbow-mode 1))
 
 (defun ecfg--scss-hook ()
   ;; the css-mode-hook will be already executed by this moment
