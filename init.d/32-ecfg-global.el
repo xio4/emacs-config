@@ -7,6 +7,7 @@
   (ecfg--setup-uniquify)
   (ecfg--setup-autocomplete)
   (ecfg--setup-yasnippet)
+  (ecfg--setup-rainbow)
   ;; (ecfg--setup-ido)
   (ecfg--setup-helm)
   (ecfg--setup-autopair)
@@ -352,4 +353,9 @@
 
 (defun ecfg--setup-jscs ()
     (require 'jscs)
+)
+
+(defun ecfg--setup-rainbow ()
+    (ecfg-install rainbow-mode
+					 (require 'rainbow-mode))
 )
