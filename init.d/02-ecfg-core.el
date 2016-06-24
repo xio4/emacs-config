@@ -4,16 +4,6 @@
 
 (defun ecfg-core-module-init ()
 
-;;; GUI
-  (setq-default inhibit-startup-screen t)
-
-  ;; we don't need menubar (execpt OSX), toolbar nor scrollbar
-  (and (fboundp 'menu-bar-mode)
-       (not (eq system-type 'darwin))
-       (tool-bar-mode nil))
-  (dolist (mode '(tool-bar-mode scroll-bar-mode))
-    (when (fboundp mode) (funcall mode -1)))
-
 ;;; Killing
   (setq-default x-select-enable-primary t)
   (delete-selection-mode t)
